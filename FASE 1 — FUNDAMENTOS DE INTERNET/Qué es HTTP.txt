@@ -1,0 +1,226 @@
+¿QUÉ ES HTTP?
+
+
+---------------------------------------------------------------------
+1) DEFINICIÓN FORMAL
+---------------------------------------------------------------------
+
+HTTP significa HyperText Transfer Protocol.
+
+Es un protocolo de la capa de aplicación diseñado para
+transferir recursos entre clientes y servidores
+dentro de la arquitectura de Internet.
+
+HTTP define:
+
+- Cómo se estructura un request
+- Cómo se estructura un response
+- Qué métodos existen
+- Cómo se comunican cliente y servidor
+- Qué significan los códigos de estado
+
+HTTP no se encarga del transporte físico.
+Opera sobre TCP (tradicionalmente) o sobre otros protocolos modernos
+como QUIC en HTTP/3.
+
+---------------------------------------------------------------------
+2) POSICIÓN EN LA ARQUITECTURA TCP/IP
+---------------------------------------------------------------------
+
+Modelo simplificado por capas:
+
+Aplicación → HTTP
+Transporte → TCP (o QUIC)
+Internet → IP
+Acceso → Ethernet / WiFi
+
+HTTP no mueve paquetes directamente.
+Depende de TCP/IP para que los datos lleguen.
+
+---------------------------------------------------------------------
+3) MODELO DE COMUNICACIÓN
+---------------------------------------------------------------------
+
+HTTP utiliza el modelo request-response.
+
+Cliente → Envía request
+Servidor → Devuelve response
+
+Ejemplo conceptual:
+
+GET /index.html HTTP/1.1
+Host: ejemplo.com
+
+El servidor responde:
+
+HTTP/1.1 200 OK
+Content-Type: text/html
+
+<html>...</html>
+
+Cada interacción es independiente.
+HTTP es, por diseño, stateless (sin estado).
+
+---------------------------------------------------------------------
+4) ¿QUÉ SIGNIFICA "STATELESS"?
+---------------------------------------------------------------------
+
+Stateless significa que el servidor
+no recuerda automáticamente requests anteriores.
+
+Cada solicitud es autónoma.
+
+Si necesitas estado (por ejemplo, sesión iniciada),
+debes usar mecanismos adicionales como:
+
+- Cookies
+- Tokens
+- Sesiones
+- JWT
+
+El protocolo base no almacena memoria.
+
+---------------------------------------------------------------------
+5) MÉTODOS HTTP
+---------------------------------------------------------------------
+
+HTTP define métodos que expresan intención.
+
+GET:
+   Obtener datos.
+
+POST:
+   Enviar datos para crear algo.
+
+PUT:
+   Reemplazar un recurso.
+
+PATCH:
+   Modificar parcialmente un recurso.
+
+DELETE:
+   Eliminar un recurso.
+
+Estos métodos permiten diseñar APIs coherentes y estructuradas.
+
+---------------------------------------------------------------------
+6) ESTRUCTURA DE UN MENSAJE HTTP
+---------------------------------------------------------------------
+
+Un mensaje HTTP tiene tres partes:
+
+1) Línea inicial
+2) Headers
+3) Body (opcional)
+
+Request:
+
+[MÉTODO] [RUTA] [VERSIÓN]
+Headers
+Línea en blanco
+Body
+
+Response:
+
+[VERSIÓN] [CÓDIGO] [MENSAJE]
+Headers
+Línea en blanco
+Body
+
+Esta estructura textual fue una de las razones
+por las que HTTP fue fácil de adoptar inicialmente.
+
+---------------------------------------------------------------------
+7) VERSIONES DE HTTP
+---------------------------------------------------------------------
+
+HTTP/1.0:
+   Conexión por request.
+   Menos eficiente.
+
+HTTP/1.1:
+   Conexiones persistentes.
+   Mejor manejo de rendimiento.
+
+HTTP/2:
+   Multiplexación.
+   Compresión de headers.
+   Binario en lugar de texto.
+   Más eficiente.
+
+HTTP/3:
+   Basado en QUIC.
+   Funciona sobre UDP.
+   Reduce latencia.
+   Mejora rendimiento en redes inestables.
+
+Cada versión busca mejorar:
+
+- Velocidad
+- Eficiencia
+- Concurrencia
+- Seguridad
+
+---------------------------------------------------------------------
+8) HTTP VS HTTPS
+---------------------------------------------------------------------
+
+HTTP:
+   No cifrado.
+   Vulnerable a interceptación.
+
+HTTPS:
+   HTTP sobre TLS/SSL.
+   Comunicación cifrada.
+   Autenticación del servidor.
+   Integridad de datos.
+
+Hoy en día,
+HTTPS es el estándar dominante.
+
+---------------------------------------------------------------------
+9) PAPEL EN LA WEB MODERNA
+---------------------------------------------------------------------
+
+HTTP es la base de:
+
+- Páginas web
+- APIs REST
+- Microservicios
+- Aplicaciones móviles
+- Comunicación frontend-backend
+
+Incluso cuando usas React,
+cada vez que haces fetch(),
+estás generando un request HTTP.
+
+---------------------------------------------------------------------
+10) LIMITACIONES DE HTTP
+---------------------------------------------------------------------
+
+HTTP tradicional:
+
+- Es sin estado
+- Puede ser verboso
+- Genera overhead en headers
+- No está optimizado para tiempo real continuo
+
+Por eso existen alternativas o complementos como:
+
+- WebSockets
+- gRPC
+- Server-Sent Events
+
+---------------------------------------------------------------------
+11) DEFINICIÓN TÉCNICA FINAL
+---------------------------------------------------------------------
+
+HTTP es un protocolo de aplicación orientado
+al intercambio estructurado de mensajes
+entre clientes y servidores,
+basado en el modelo request-response,
+que opera sobre protocolos de transporte
+y permite la transferencia de recursos
+identificados por URLs dentro de la Web.
+
+---------------------------------------------------------------------

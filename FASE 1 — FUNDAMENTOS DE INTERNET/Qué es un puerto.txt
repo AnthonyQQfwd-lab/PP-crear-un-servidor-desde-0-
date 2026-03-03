@@ -1,0 +1,199 @@
+¿QUÉ ES UN PUERTO EN REDES?
+Explicación técnica estructurada y detallada.
+
+---------------------------------------------------------------------
+1) DEFINICIÓN FORMAL
+---------------------------------------------------------------------
+
+Un puerto es un identificador numérico lógico utilizado por los
+protocolos de transporte (como TCP y UDP) para diferenciar múltiples
+servicios o aplicaciones que se ejecutan en un mismo dispositivo.
+
+Mientras que la dirección IP identifica el dispositivo dentro de la red,
+el puerto identifica el proceso o servicio específico dentro de ese
+dispositivo.
+
+En otras palabras:
+
+IP = ¿Qué máquina?
+Puerto = ¿Qué aplicación dentro de esa máquina?
+
+---------------------------------------------------------------------
+2) POR QUÉ SON NECESARIOS LOS PUERTOS
+---------------------------------------------------------------------
+
+Imagina un servidor con una sola dirección IP pública.
+
+Ese servidor puede ofrecer simultáneamente:
+
+- Una página web
+- Un servidor de base de datos
+- Un servicio de correo electrónico
+- Una API
+- Un servidor SSH
+
+Si solo existiera la IP, el servidor no sabría
+a cuál de esos servicios debe entregar el tráfico entrante.
+
+El puerto resuelve ese problema.
+
+Permite multiplexar múltiples servicios
+sobre una misma dirección IP.
+
+---------------------------------------------------------------------
+3) ESTRUCTURA TÉCNICA
+---------------------------------------------------------------------
+
+Un puerto es un número de 16 bits.
+
+Eso significa que puede tener valores entre:
+
+0 y 65535
+
+Estos puertos se dividen en tres categorías:
+
+1) Puertos bien conocidos (0 - 1023)
+   Reservados para servicios estándar.
+
+2) Puertos registrados (1024 - 49151)
+   Usados por aplicaciones específicas.
+
+3) Puertos dinámicos o efímeros (49152 - 65535)
+   Asignados temporalmente por el sistema operativo.
+
+---------------------------------------------------------------------
+4) EJEMPLOS DE PUERTOS COMUNES
+---------------------------------------------------------------------
+
+Puerto 80:
+   HTTP (Web sin cifrado)
+
+Puerto 443:
+   HTTPS (Web con cifrado)
+
+Puerto 22:
+   SSH (acceso remoto seguro)
+
+Puerto 25:
+   SMTP (correo saliente)
+
+Puerto 3306:
+   MySQL
+
+Estos números no son obligatorios por naturaleza,
+pero se han estandarizado por convención.
+
+---------------------------------------------------------------------
+5) PUERTOS Y PROTOCOLOS DE TRANSPORTE
+---------------------------------------------------------------------
+
+Los puertos existen en la capa de transporte.
+
+Principalmente en:
+
+- TCP
+- UDP
+
+Cada conexión se define por una combinación llamada
+"socket" que incluye:
+
+IP origen
+Puerto origen
+IP destino
+Puerto destino
+Protocolo (TCP o UDP)
+
+Esta combinación forma una conexión única.
+
+---------------------------------------------------------------------
+6) CÓMO FUNCIONA UNA CONEXIÓN REAL
+---------------------------------------------------------------------
+
+Supongamos que entras a una página web segura.
+
+Tu computadora podría usar:
+
+IP origen: 192.168.1.10
+Puerto origen: 53421 (efímero)
+IP destino: 142.250.190.14
+Puerto destino: 443
+Protocolo: TCP
+
+El puerto 443 indica que estás solicitando
+el servicio HTTPS en el servidor.
+
+El puerto 53421 fue asignado temporalmente
+por tu sistema operativo para esa conexión específica.
+
+Cuando la sesión termina,
+ese puerto efímero queda disponible nuevamente.
+
+---------------------------------------------------------------------
+7) PUERTOS ABIERTOS Y FIREWALLS
+---------------------------------------------------------------------
+
+Un puerto puede estar:
+
+- Abierto
+- Cerrado
+- Filtrado
+
+Un puerto abierto significa que existe
+un servicio escuchando en ese número.
+
+Un firewall controla qué puertos
+permiten tráfico entrante o saliente.
+
+Por ejemplo,
+si quieres montar tu propio servidor web,
+debes abrir el puerto 80 o 443 en tu router
+y redirigirlo hacia tu máquina interna.
+
+---------------------------------------------------------------------
+8) PUERTOS NO SON PUERTAS FÍSICAS
+---------------------------------------------------------------------
+
+El término "puerto" es conceptual.
+
+No es un agujero físico.
+No es una conexión adicional.
+
+Es simplemente un número
+usado por el sistema operativo
+para organizar el tráfico de red internamente.
+
+El kernel mantiene tablas
+que asocian puertos con procesos activos.
+
+---------------------------------------------------------------------
+9) PUERTOS Y SEGURIDAD
+---------------------------------------------------------------------
+
+Los atacantes suelen escanear puertos
+para descubrir servicios expuestos.
+
+Si un puerto está abierto y mal configurado,
+puede representar un riesgo.
+
+Por eso es buena práctica:
+
+- Cerrar puertos innecesarios
+- Usar firewalls
+- Restringir acceso por IP
+- Mantener servicios actualizados
+
+Abrir un puerto es exponer un servicio.
+Debe hacerse conscientemente.
+
+---------------------------------------------------------------------
+10) DEFINICIÓN TÉCNICA FINAL
+---------------------------------------------------------------------
+
+Un puerto es un identificador numérico lógico
+asociado a la capa de transporte,
+que permite la multiplexación de múltiples
+servicios o procesos sobre una misma dirección IP,
+facilitando la correcta entrega de paquetes
+a la aplicación correspondiente dentro de un dispositivo.
+
+---------------------------------------------------------------------

@@ -1,0 +1,234 @@
+¿QUÉ ES TCP Y UDP?
+
+
+---------------------------------------------------------------------
+1) CONTEXTO DENTRO DE INTERNET
+---------------------------------------------------------------------
+
+TCP y UDP son protocolos de la capa de transporte
+dentro del modelo TCP/IP.
+
+Si recordamos la estructura por capas:
+
+- Aplicación (HTTP, DNS, SMTP, etc.)
+- Transporte (TCP / UDP)
+- Internet (IP)
+- Acceso a red (Ethernet, WiFi, etc.)
+
+IP se encarga de llevar paquetes de un dispositivo a otro.
+Pero IP por sí solo NO garantiza:
+
+- Orden correcto
+- Entrega segura
+- Que el paquete llegue
+- Que no haya duplicados
+
+Ahí es donde entran TCP y UDP.
+
+Ambos operan sobre IP,
+pero tienen filosofías completamente distintas.
+
+---------------------------------------------------------------------
+2) TCP (Transmission Control Protocol)
+---------------------------------------------------------------------
+
+TCP es un protocolo orientado a conexión,
+fiable y con control de errores.
+
+Su objetivo principal es garantizar que los datos:
+
+- Lleguen completos
+- Lleguen en orden
+- No estén corruptos
+- No se pierdan sin ser detectados
+
+Para lograr esto, TCP implementa varios mecanismos.
+
+---------------------------------------------------------------------
+3) ESTABLECIMIENTO DE CONEXIÓN (3-WAY HANDSHAKE)
+---------------------------------------------------------------------
+
+Antes de enviar datos, TCP establece una conexión
+mediante un proceso llamado "three-way handshake".
+
+Paso 1:
+Cliente → SYN
+
+Paso 2:
+Servidor → SYN-ACK
+
+Paso 3:
+Cliente → ACK
+
+Después de este intercambio,
+la conexión queda establecida.
+
+Solo entonces comienza la transmisión de datos.
+
+Esto introduce latencia inicial,
+pero asegura sincronización.
+
+---------------------------------------------------------------------
+4) MECANISMOS INTERNOS DE TCP
+---------------------------------------------------------------------
+
+TCP incluye:
+
+- Números de secuencia
+- Confirmaciones (ACK)
+- Retransmisión automática
+- Control de flujo
+- Control de congestión
+
+Si un paquete se pierde,
+TCP lo detecta y lo reenvía.
+
+Si la red está congestionada,
+TCP reduce la velocidad de envío.
+
+Esto hace que TCP sea confiable,
+pero más pesado y complejo.
+
+---------------------------------------------------------------------
+5) USOS TÍPICOS DE TCP
+---------------------------------------------------------------------
+
+Se utiliza cuando la integridad es crítica.
+
+Ejemplos:
+
+- Navegación web (HTTP/HTTPS)
+- Transferencia de archivos
+- Correo electrónico
+- Conexiones SSH
+- Bases de datos
+
+En estos casos, perder información no es aceptable.
+
+---------------------------------------------------------------------
+6) UDP (User Datagram Protocol)
+---------------------------------------------------------------------
+
+UDP es un protocolo no orientado a conexión,
+sin garantía de entrega.
+
+No establece handshake.
+No confirma recepción.
+No retransmite paquetes.
+
+Simplemente envía datagramas
+y no verifica si llegaron.
+
+Es mucho más simple y ligero.
+
+---------------------------------------------------------------------
+7) CARACTERÍSTICAS DE UDP
+---------------------------------------------------------------------
+
+UDP:
+
+- No garantiza orden
+- No garantiza entrega
+- No detecta congestión
+- Tiene menor sobrecarga
+- Es más rápido
+
+Al eliminar mecanismos de control,
+reduce latencia y consumo de recursos.
+
+---------------------------------------------------------------------
+8) USOS TÍPICOS DE UDP
+---------------------------------------------------------------------
+
+Se usa cuando:
+
+- La velocidad es más importante que la perfección
+- Pequeñas pérdidas son tolerables
+
+Ejemplos:
+
+- Streaming en tiempo real
+- Videollamadas
+- Juegos en línea
+- DNS
+- VoIP
+
+En una videollamada,
+es preferible perder un pequeño fragmento
+a retrasar todo esperando retransmisión.
+
+---------------------------------------------------------------------
+9) DIFERENCIA FILOSÓFICA
+---------------------------------------------------------------------
+
+TCP prioriza:
+
+Confiabilidad > Velocidad
+
+UDP prioriza:
+
+Velocidad > Confiabilidad
+
+No es que uno sea mejor que el otro.
+Depende del contexto.
+
+---------------------------------------------------------------------
+10) ESTRUCTURA DE UN SEGMENTO
+---------------------------------------------------------------------
+
+TCP incluye un encabezado más grande
+porque necesita almacenar:
+
+- Puertos
+- Números de secuencia
+- ACK
+- Flags
+- Ventana
+- Checksum
+
+UDP tiene un encabezado mucho más pequeño,
+solo incluye:
+
+- Puerto origen
+- Puerto destino
+- Longitud
+- Checksum
+
+Por eso UDP es más ligero.
+
+---------------------------------------------------------------------
+11) RELACIÓN CON PUERTOS
+---------------------------------------------------------------------
+
+Ambos utilizan puertos.
+
+Ejemplo:
+
+HTTP:
+TCP puerto 80
+
+HTTPS:
+TCP puerto 443
+
+DNS:
+Generalmente UDP puerto 53
+
+Cada protocolo de aplicación decide
+si usar TCP o UDP según sus necesidades.
+
+---------------------------------------------------------------------
+12) DEFINICIÓN TÉCNICA FINAL
+---------------------------------------------------------------------
+
+TCP es un protocolo de transporte orientado a conexión,
+fiable y con mecanismos de control de flujo y congestión,
+que garantiza la entrega ordenada y completa de datos.
+
+UDP es un protocolo de transporte sin conexión,
+ligero y de baja latencia,
+que envía datagramas sin garantizar entrega ni orden.
+
+Ambos operan sobre IP
+y permiten la multiplexación de servicios mediante puertos.
+
+---------------------------------------------------------------------

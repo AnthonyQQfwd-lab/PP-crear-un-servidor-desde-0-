@@ -1,0 +1,214 @@
+¿QUÉ ES DNS?
+Explicación técnica detallada y estructurada.
+
+---------------------------------------------------------------------
+1) DEFINICIÓN FORMAL
+---------------------------------------------------------------------
+
+DNS significa Domain Name System (Sistema de Nombres de Dominio).
+
+Es un sistema jerárquico y distribuido cuya función principal es
+traducir nombres de dominio legibles por humanos en direcciones IP
+comprensibles por las máquinas.
+
+En términos simples pero técnicos:
+
+DNS es el mecanismo que permite que cuando escribes
+un nombre como ejemplo.com,
+tu computadora pueda descubrir la dirección IP real
+del servidor al que debe conectarse.
+
+Sin DNS, Internet seguiría funcionando,
+pero los usuarios tendrían que memorizar direcciones IP numéricas
+para cada servicio.
+
+---------------------------------------------------------------------
+2) PROBLEMA QUE RESUELVE DNS
+---------------------------------------------------------------------
+
+Los humanos trabajamos mejor con nombres.
+Las máquinas trabajan con números.
+
+Ejemplo conceptual:
+
+Nombre fácil de recordar:
+servidor.com
+
+Dirección real:
+142.250.190.14
+
+Si DNS no existiera,
+tendrías que escribir directamente la IP
+cada vez que quisieras acceder a un servicio.
+
+DNS funciona como una base de datos distribuida
+que resuelve ese problema de traducción.
+
+---------------------------------------------------------------------
+3) ARQUITECTURA JERÁRQUICA
+---------------------------------------------------------------------
+
+DNS no es un servidor único.
+Es una red global de servidores organizados jerárquicamente.
+
+La estructura se divide en niveles:
+
+1) Root Servers (Servidores raíz)
+2) TLD Servers (Top-Level Domain)
+3) Authoritative Name Servers
+4) Servidores recursivos (Resolvers)
+
+Cada nivel tiene una función específica
+en el proceso de resolución de nombres.
+
+---------------------------------------------------------------------
+4) PROCESO DE RESOLUCIÓN PASO A PASO
+---------------------------------------------------------------------
+
+Supongamos que escribes en tu navegador:
+
+ejemplo.com
+
+El proceso ocurre así:
+
+1) Tu computadora consulta primero su caché local.
+   Si ya resolvió esa dirección antes, usa la IP guardada.
+
+2) Si no la encuentra,
+   pregunta a un servidor DNS recursivo
+   (generalmente el de tu proveedor de Internet).
+
+3) El servidor recursivo pregunta a un servidor raíz:
+   ¿Dónde puedo encontrar información sobre ".com"?
+
+4) El servidor raíz responde con la dirección
+   del servidor TLD correspondiente a ".com".
+
+5) El servidor recursivo pregunta al TLD:
+   ¿Dónde está el servidor autoritativo de ejemplo.com?
+
+6) El TLD responde con la dirección del servidor autoritativo.
+
+7) Finalmente, el servidor autoritativo responde
+   con la dirección IP real del dominio.
+
+8) El servidor recursivo devuelve la IP a tu computadora.
+
+9) Tu navegador ahora puede conectarse al servidor correcto.
+
+Todo este proceso ocurre en milisegundos.
+
+---------------------------------------------------------------------
+5) SISTEMA DISTRIBUIDO Y DESCENTRALIZADO
+---------------------------------------------------------------------
+
+DNS está diseñado como un sistema distribuido.
+
+Eso significa que:
+
+- No depende de un solo servidor central.
+- La información está replicada globalmente.
+- Puede seguir funcionando incluso si partes del sistema fallan.
+
+Esta descentralización es esencial
+para la resiliencia de Internet.
+
+---------------------------------------------------------------------
+6) TIPOS DE REGISTROS DNS
+---------------------------------------------------------------------
+
+DNS no solo traduce nombres a IP.
+
+Existen diferentes tipos de registros:
+
+A:
+   Asocia un dominio con una dirección IPv4.
+
+AAAA:
+   Asocia un dominio con una dirección IPv6.
+
+MX:
+   Indica qué servidor maneja el correo electrónico del dominio.
+
+CNAME:
+   Crea un alias hacia otro nombre de dominio.
+
+TXT:
+   Almacena texto (usado en verificaciones y seguridad).
+
+NS:
+   Indica qué servidores son autoritativos para ese dominio.
+
+Cada registro cumple una función específica
+dentro del ecosistema de Internet.
+
+---------------------------------------------------------------------
+7) CACHÉ Y EFICIENCIA
+---------------------------------------------------------------------
+
+Para evitar repetir el proceso completo cada vez,
+DNS utiliza almacenamiento en caché.
+
+Cada respuesta DNS incluye un valor llamado TTL
+(Time To Live).
+
+El TTL indica cuánto tiempo
+puede guardarse esa información antes de volver a consultarla.
+
+Esto reduce:
+
+- Latencia
+- Carga en servidores
+- Tráfico innecesario
+
+---------------------------------------------------------------------
+8) SEGURIDAD EN DNS
+---------------------------------------------------------------------
+
+DNS originalmente no fue diseñado con seguridad fuerte.
+
+Por eso existen extensiones como:
+
+DNSSEC:
+   Permite verificar criptográficamente
+   que la respuesta DNS no ha sido alterada.
+
+También existen protocolos como:
+
+DoH (DNS over HTTPS)
+DoT (DNS over TLS)
+
+Que cifran las consultas DNS
+para evitar espionaje o manipulación.
+
+---------------------------------------------------------------------
+9) DNS Y TU PROPIO SERVIDOR
+---------------------------------------------------------------------
+
+Si decides montar un servidor en tu casa,
+DNS será esencial.
+
+Necesitarás:
+
+- Registrar un dominio
+- Configurar registros A o AAAA
+- Apuntar el dominio hacia tu IP pública
+
+Sin DNS,
+solo podrían acceder usando tu dirección IP directa.
+
+DNS convierte tu servidor
+en algo accesible y usable globalmente.
+
+---------------------------------------------------------------------
+10) DEFINICIÓN TÉCNICA FINAL
+---------------------------------------------------------------------
+
+DNS es un sistema jerárquico, distribuido y escalable
+de resolución de nombres,
+que traduce identificadores simbólicos (dominios)
+en direcciones IP numéricas,
+permitiendo la localización y conexión
+entre dispositivos dentro de la infraestructura global de Internet.
+
+---------------------------------------------------------------------

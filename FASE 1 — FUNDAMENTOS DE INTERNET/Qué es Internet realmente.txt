@@ -1,0 +1,335 @@
+¿Qué es Internet realmente?
+
+Internet History -- One Page Summary
+
+La base conceptual para la creación de Internet fue desarrollada en gran parte 
+por tres individuos y una conferencia de investigación, cada uno de los cuales 
+cambió la manera en que pensábamos sobre la tecnología al predecir con precisión 
+su futuro:
+
+Vannevar Bush escribió la primera descripción visionaria sobre los posibles usos 
+de la tecnología de la información con su descripción del sistema de biblioteca 
+automatizada “memex”.
+
+Norbert Wiener fundó el campo de la Cibernética, inspirando a futuros 
+investigadores a centrarse en el uso de la tecnología para ampliar las 
+capacidades humanas.
+
+La Conferencia de Dartmouth sobre Inteligencia Artificial en 1956 consolidó la 
+idea de que la tecnología estaba mejorando a un ritmo exponencial y ofreció la 
+primera consideración seria sobre sus consecuencias.
+
+Marshall McLuhan convirtió la idea de una aldea global interconectada por un 
+sistema nervioso electrónico en parte de nuestra cultura popular.
+
+En 1957, la Unión Soviética lanzó el primer satélite, Sputnik I, lo que llevó al 
+presidente de Estados Unidos, Dwight Eisenhower, a crear la agencia ARPA para 
+recuperar el liderazgo tecnológico en la carrera armamentista. ARPA nombró a 
+J.C.R. Licklider como director de la nueva organización IPTO con el mandato de 
+continuar la investigación del programa SAGE y ayudar a proteger a Estados 
+Unidos contra un ataque nuclear desde el espacio.
+
+Licklider promovió dentro de la IPTO los posibles beneficios de una red de 
+comunicaciones a nivel nacional, influyendo a sus sucesores para que contrataran 
+a Lawrence Roberts para implementar su visión.
+
+Roberts dirigió el desarrollo de la red, basándose en la nueva idea de 
+conmutación de paquetes inventada por Paul Baran en RAND y, pocos años después, 
+por Donald Davies en el Laboratorio Nacional de Física del Reino Unido.
+
+Se desarrolló una computadora especial llamada Interface Message Processor para 
+llevar a cabo el diseño, y ARPANET entró en funcionamiento a principios de 
+octubre de 1969. Las primeras comunicaciones fueron entre el centro de 
+investigación de Leonard Kleinrock en la Universidad de California en Los 
+Ángeles y el centro de Douglas Engelbart en el Stanford Research Institute.
+
+El primer protocolo de red utilizado en ARPANET fue el Network Control Program. 
+En 1983, fue reemplazado por el protocolo TCP/IP inventado por Robert Kahn, 
+Vinton Cerf y otros, que rápidamente se convirtió en el protocolo de red más 
+utilizado en el mundo.
+
+En 1990, ARPANET fue retirado y transferido a NSFNET. NSFNET pronto se conectó 
+con CSNET, que enlazaba universidades en toda América del Norte, y luego con 
+EUnet, que conectaba centros de investigación en Europa.
+
+Gracias en parte a la gestión visionaria de la NSF, y alimentado por la 
+popularidad de la web, el uso de Internet se disparó después de 1990, lo que 
+llevó al gobierno de Estados Unidos a transferir su gestión a organizaciones 
+independientes a partir de 1995.
+
+Y aquí estamos hoy. Cientos de proveedores de Internet, millones de sitios web. 
+¡Qué viaje ha sido!
+
+https://www.livinginternet.com/i/ii_summary.htm
+
+¿QUÉ ES EL INTERNET?
+Explicación técnica detallada, estructurada y progresiva.
+
+---------------------------------------------------------------------
+1) DEFINICIÓN FORMAL Y CONCEPTUAL
+---------------------------------------------------------------------
+
+Internet es una infraestructura global descentralizada compuesta por
+millones de redes interconectadas que utilizan un conjunto estandarizado
+de protocolos de comunicación para intercambiar datos mediante el modelo
+de conmutación de paquetes.
+
+No es una empresa.
+No es una aplicación.
+No es una sola red.
+
+Es un ecosistema técnico compuesto por:
+
+- Infraestructura física
+- Infraestructura lógica
+- Protocolos de comunicación
+- Sistemas de direccionamiento
+- Entidades administrativas autónomas
+
+Cuando hablamos de Internet, hablamos de una arquitectura distribuida
+que permite que dispositivos heterogéneos (distintos sistemas operativos,
+distintos fabricantes, distintas tecnologías) puedan comunicarse entre sí
+sin importar su ubicación geográfica.
+
+---------------------------------------------------------------------
+2) ARQUITECTURA FÍSICA (CAPA MATERIAL)
+---------------------------------------------------------------------
+
+En su nivel más bajo, Internet es físico.
+
+Está compuesto por:
+
+- Cables de fibra óptica terrestres
+- Cables submarinos intercontinentales
+- Enlaces de microondas
+- Satélites
+- Centros de datos
+- Ruteadores de alta capacidad
+- Switches de núcleo
+
+La fibra óptica transmite datos mediante pulsos de luz.
+Cada pulso representa información binaria (0 y 1).
+
+Los cables submarinos conectan continentes completos.
+Grandes proveedores internacionales operan redes troncales
+(backbone networks) que transportan enormes volúmenes de tráfico.
+
+Sin esta infraestructura física, no existiría Internet.
+Lo digital siempre depende de lo material.
+
+---------------------------------------------------------------------
+3) REDES AUTÓNOMAS Y SISTEMA GLOBAL
+---------------------------------------------------------------------
+
+Internet está formada por miles de redes independientes
+llamadas Sistemas Autónomos (Autonomous Systems o AS).
+
+Cada AS es administrado por:
+
+- Proveedores de servicios de Internet (ISP)
+- Universidades
+- Gobiernos
+- Grandes empresas tecnológicas
+
+Cada sistema autónomo tiene su propio rango de direcciones IP
+y sus propias políticas de enrutamiento.
+
+Estos sistemas se interconectan mediante acuerdos de:
+
+- Peering (intercambio directo de tráfico)
+- Transit (pago por acceso a redes más grandes)
+
+Esta estructura crea una red descentralizada,
+sin un punto único de control global.
+
+---------------------------------------------------------------------
+4) DIRECCIONAMIENTO IP
+---------------------------------------------------------------------
+
+Para que la comunicación sea posible,
+cada dispositivo conectado a Internet necesita
+una dirección única global.
+
+Esa dirección es la IP (Internet Protocol).
+
+Existen dos versiones principales:
+
+IPv4:
+Utiliza direcciones de 32 bits.
+Permite aproximadamente 4 mil millones de direcciones.
+
+IPv6:
+Utiliza direcciones de 128 bits.
+Permite una cantidad prácticamente inagotable de direcciones.
+
+La dirección IP no es solo una etiqueta.
+Es un elemento esencial para el enrutamiento,
+ya que los routers utilizan esa información
+para decidir por dónde enviar los paquetes.
+
+---------------------------------------------------------------------
+5) CONMUTACIÓN DE PAQUETES
+---------------------------------------------------------------------
+
+Internet no funciona enviando información como un flujo continuo dedicado.
+
+Utiliza un modelo llamado conmutación de paquetes.
+
+Cuando un dispositivo envía datos:
+
+1. El mensaje se divide en fragmentos pequeños llamados paquetes.
+2. Cada paquete incluye:
+   - Dirección de origen
+   - Dirección de destino
+   - Número de secuencia
+   - Información de control
+   - Fragmento del contenido original
+3. Cada paquete puede tomar rutas distintas.
+4. En el destino se reensamblan en el orden correcto.
+
+Este modelo permite:
+
+- Uso eficiente del ancho de banda
+- Redundancia
+- Tolerancia a fallos
+- Escalabilidad global
+
+---------------------------------------------------------------------
+6) PROTOCOLOS Y CAPAS (MODELO LÓGICO)
+---------------------------------------------------------------------
+
+Internet funciona mediante una arquitectura por capas.
+
+El modelo más usado conceptualmente es el modelo TCP/IP.
+
+Capas principales:
+
+1. Capa de Aplicación
+   (HTTP, SMTP, FTP, DNS)
+
+2. Capa de Transporte
+   (TCP, UDP)
+
+3. Capa de Internet
+   (IP)
+
+4. Capa de Acceso a Red
+   (Ethernet, WiFi, etc.)
+
+Cada capa cumple una función específica
+y se comunica con la capa superior e inferior
+mediante interfaces definidas.
+
+Esta modularidad permite que Internet evolucione
+sin necesidad de rediseñar todo el sistema.
+
+---------------------------------------------------------------------
+7) ENRUTAMIENTO GLOBAL
+---------------------------------------------------------------------
+
+El enrutamiento es el proceso mediante el cual
+los routers determinan el mejor camino
+para enviar un paquete hacia su destino.
+
+A nivel global, los sistemas autónomos
+intercambian información de rutas
+mediante el protocolo BGP (Border Gateway Protocol).
+
+BGP permite que los routers sepan:
+
+- Qué redes existen
+- Por dónde se puede llegar a ellas
+- Qué caminos son preferibles según políticas
+
+El enrutamiento en Internet no siempre sigue
+la ruta más corta físicamente,
+sino la más eficiente según acuerdos y políticas.
+
+---------------------------------------------------------------------
+8) DNS (SISTEMA DE NOMBRES DE DOMINIO)
+---------------------------------------------------------------------
+
+Los humanos no memorizan direcciones IP numéricas.
+Por eso existe el DNS.
+
+El DNS es un sistema jerárquico y distribuido
+que traduce nombres de dominio en direcciones IP.
+
+Ejemplo conceptual:
+
+nombre.com → IP real del servidor
+
+Sin DNS, Internet seguiría funcionando,
+pero sería impráctico para uso humano masivo.
+
+---------------------------------------------------------------------
+9) CLIENTE-SERVIDOR Y SERVICIOS
+---------------------------------------------------------------------
+
+La mayoría de las aplicaciones en Internet
+siguen el modelo cliente-servidor.
+
+Cliente:
+Dispositivo que solicita información.
+
+Servidor:
+Dispositivo que responde y provee recursos.
+
+Ejemplos de servicios sobre Internet:
+
+- Web (HTTP/HTTPS)
+- Correo electrónico
+- Streaming
+- Transferencia de archivos
+- Juegos en línea
+- Computación en la nube
+
+La Web es solo uno de muchos servicios
+que funcionan sobre la infraestructura de Internet.
+
+---------------------------------------------------------------------
+10) DESCENTRALIZACIÓN Y RESILIENCIA
+---------------------------------------------------------------------
+
+Internet fue diseñado para ser resiliente.
+
+No existe un nodo central cuya caída
+destruya toda la red.
+
+Si un enlace falla,
+los protocolos de enrutamiento recalculan rutas alternativas.
+
+Esta arquitectura distribuida
+permite que Internet sobreviva a fallos,
+desastres naturales e incluso conflictos.
+
+---------------------------------------------------------------------
+11) ESCALABILIDAD
+---------------------------------------------------------------------
+
+Uno de los mayores logros de Internet
+es su capacidad de escalar.
+
+Pasó de conectar pocas universidades
+a conectar miles de millones de dispositivos.
+
+Esto fue posible gracias a:
+
+- Diseño modular por capas
+- Conmutación de paquetes
+- Enrutamiento distribuido
+- Estándares abiertos
+
+---------------------------------------------------------------------
+12) DEFINICIÓN TÉCNICA FINAL
+---------------------------------------------------------------------
+
+Internet es un sistema global descentralizado
+de interconexión de redes autónomas,
+basado en la conmutación de paquetes
+y en el conjunto de protocolos TCP/IP,
+que permite el intercambio de datos
+entre dispositivos heterogéneos
+a escala planetaria.
+
+---------------------------------------------------------------------

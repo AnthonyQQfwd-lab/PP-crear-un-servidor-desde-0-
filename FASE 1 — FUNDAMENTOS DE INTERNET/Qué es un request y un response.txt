@@ -1,0 +1,230 @@
+¿QUÉ ES UN REQUEST Y UN RESPONSE?
+Explicación técnica detallada dentro del contexto de redes y web.
+
+---------------------------------------------------------------------
+1) DEFINICIÓN GENERAL
+---------------------------------------------------------------------
+
+Un request (solicitud) es un mensaje que un cliente envía a un servidor
+para pedir un recurso, ejecutar una acción o solicitar información.
+
+Un response (respuesta) es el mensaje que el servidor devuelve
+como resultado de ese request.
+
+Este modelo se basa en la arquitectura cliente-servidor,
+que es el patrón dominante en Internet.
+
+Cliente:
+Inicia la comunicación.
+
+Servidor:
+Procesa la solicitud y responde.
+
+---------------------------------------------------------------------
+2) CONTEXTO DENTRO DE INTERNET
+---------------------------------------------------------------------
+
+Cuando utilizas:
+
+- Un navegador
+- Una app móvil
+- Un cliente de videojuegos
+- Una API
+
+Siempre estás enviando requests a un servidor
+y recibiendo responses.
+
+Este intercambio ocurre sobre protocolos como:
+
+HTTP (el más común en la web).
+
+El flujo general es:
+
+Cliente → Request → Servidor
+Servidor → Response → Cliente
+
+---------------------------------------------------------------------
+3) ¿QUÉ CONTIENE UN REQUEST HTTP?
+---------------------------------------------------------------------
+
+Un request HTTP tiene varias partes estructuradas.
+
+Ejemplo conceptual:
+
+GET /usuarios HTTP/1.1
+Host: ejemplo.com
+User-Agent: navegador
+Authorization: token
+Content-Type: application/json
+
+Cuerpo (opcional)
+
+Se divide en:
+
+1) Línea inicial:
+   Método + Ruta + Versión del protocolo
+
+2) Headers:
+   Metadatos sobre la solicitud
+
+3) Body (opcional):
+   Datos enviados al servidor
+
+---------------------------------------------------------------------
+4) MÉTODOS HTTP (TIPOS DE REQUEST)
+---------------------------------------------------------------------
+
+GET:
+   Solicita datos.
+
+POST:
+   Envía datos para crear algo.
+
+PUT:
+   Actualiza completamente un recurso.
+
+PATCH:
+   Actualiza parcialmente un recurso.
+
+DELETE:
+   Elimina un recurso.
+
+Cada método expresa una intención distinta.
+
+---------------------------------------------------------------------
+5) ¿QUÉ CONTIENE UN RESPONSE HTTP?
+---------------------------------------------------------------------
+
+Un response también tiene estructura.
+
+Ejemplo conceptual:
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 58
+
+{ "nombre": "Anthony", "rol": "usuario" }
+
+Se compone de:
+
+1) Línea de estado:
+   Versión + Código de estado + Mensaje
+
+2) Headers:
+   Información sobre la respuesta
+
+3) Body:
+   El contenido solicitado
+
+---------------------------------------------------------------------
+6) CÓDIGOS DE ESTADO
+---------------------------------------------------------------------
+
+Los códigos de estado indican el resultado del request.
+
+Se agrupan en categorías:
+
+100-199 → Informativos
+200-299 → Éxito
+300-399 → Redirecciones
+400-499 → Errores del cliente
+500-599 → Errores del servidor
+
+Ejemplos comunes:
+
+200 OK
+404 Not Found
+500 Internal Server Error
+401 Unauthorized
+
+Estos códigos son fundamentales para
+el control lógico en aplicaciones.
+
+---------------------------------------------------------------------
+7) QUÉ OCURRE INTERNAMENTE
+---------------------------------------------------------------------
+
+Cuando haces un request:
+
+1) Se resuelve el dominio vía DNS.
+2) Se establece conexión TCP.
+3) (Si es HTTPS) ocurre negociación TLS.
+4) Se envía el request.
+5) El servidor procesa la solicitud.
+6) El servidor genera un response.
+7) Se envía la respuesta.
+8) El cliente interpreta el resultado.
+
+Todo esto puede ocurrir en menos de 200 ms.
+
+---------------------------------------------------------------------
+8) REQUEST/RESPONSE NO ES SOLO WEB
+---------------------------------------------------------------------
+
+Aunque HTTP es el ejemplo más común,
+el patrón request-response también existe en:
+
+- Bases de datos
+- Sistemas RPC
+- APIs internas
+- Microservicios
+- Servicios en la nube
+
+Es un modelo fundamental de comunicación distribuida.
+
+---------------------------------------------------------------------
+9) LIMITACIONES DEL MODELO
+---------------------------------------------------------------------
+
+El modelo request-response es:
+
+- Sin estado por defecto (stateless)
+- Basado en ciclos individuales
+
+Eso significa que cada request es independiente.
+
+Para mantener estado se usan:
+
+- Cookies
+- Tokens
+- Sesiones
+- JWT
+
+---------------------------------------------------------------------
+10) DIFERENCIA CON OTROS MODELOS
+---------------------------------------------------------------------
+
+Request/Response:
+   Comunicación puntual.
+   Cliente inicia.
+   Servidor responde.
+
+WebSocket:
+   Comunicación bidireccional persistente.
+
+Streaming:
+   Flujo continuo de datos.
+
+Event-driven:
+   Basado en eventos y suscripciones.
+
+El modelo request-response es simple y robusto,
+pero no siempre es el más eficiente para tiempo real.
+
+---------------------------------------------------------------------
+11) DEFINICIÓN TÉCNICA FINAL
+---------------------------------------------------------------------
+
+Un request es una unidad estructurada de comunicación
+enviada por un cliente a un servidor
+con el propósito de solicitar recursos o ejecutar acciones.
+
+Un response es la unidad estructurada de respuesta
+emitida por el servidor,
+que contiene el resultado del procesamiento de dicho request,
+incluyendo estado, metadatos y contenido.
+
+Este modelo constituye la base de la comunicación web moderna
+y de la mayoría de arquitecturas distribuidas actuales.
+
+---------------------------------------------------------------------

@@ -1,0 +1,233 @@
+¿QUÉ ES UNA DIRECCIÓN IP?
+
+
+---------------------------------------------------------------------
+1) DEFINICIÓN FORMAL
+---------------------------------------------------------------------
+
+Una dirección IP (Internet Protocol Address) es un identificador
+numérico único asignado a un dispositivo dentro de una red que utiliza
+el protocolo IP para comunicarse.
+
+Su función principal es permitir:
+
+- Identificar un origen
+- Identificar un destino
+- Permitir el enrutamiento de paquetes entre redes
+
+Sin direcciones IP, los datos no tendrían forma de saber
+a dónde deben ser enviados ni de dónde provienen.
+
+En términos técnicos, la dirección IP es un identificador lógico,
+no físico.
+
+---------------------------------------------------------------------
+2) IDENTIFICADOR LÓGICO VS IDENTIFICADOR FÍSICO
+---------------------------------------------------------------------
+
+Es importante entender que una IP no es como el número de serie
+de un dispositivo.
+
+No está “grabada” físicamente en la máquina.
+
+Es una dirección lógica asignada por:
+
+- Un proveedor de Internet
+- Un administrador de red
+- Un router local
+
+En contraste, una dirección MAC sí es un identificador físico
+grabado en la tarjeta de red.
+
+La IP puede cambiar.
+La MAC normalmente no.
+
+---------------------------------------------------------------------
+3) ESTRUCTURA DE UNA DIRECCIÓN IPv4
+---------------------------------------------------------------------
+
+Una dirección IPv4 está compuesta por 32 bits.
+
+Se representa normalmente en formato decimal dividido en 4 bloques:
+
+Ejemplo:
+
+192.168.1.10
+
+Cada bloque representa 8 bits (1 byte).
+Cada bloque puede tener valores entre 0 y 255.
+
+En realidad, internamente se ve así en binario:
+
+11000000.10101000.00000001.00001010
+
+Pero usamos decimal porque es más legible para humanos.
+
+Con 32 bits se pueden generar aproximadamente:
+
+4,294,967,296 direcciones posibles.
+
+---------------------------------------------------------------------
+4) PROBLEMA DE ESCALABILIDAD Y NACIMIENTO DE IPv6
+---------------------------------------------------------------------
+
+Cuando Internet comenzó, nadie imaginó
+que miles de millones de dispositivos se conectarían.
+
+IPv4 empezó a quedarse sin direcciones disponibles.
+
+Para resolver esto, se creó IPv6.
+
+IPv6 utiliza 128 bits en lugar de 32.
+
+Ejemplo de IPv6:
+
+2001:0db8:85a3:0000:0000:8a2e:0370:7334
+
+La cantidad de direcciones posibles en IPv6 es astronómica.
+Suficiente para asignar direcciones únicas
+a prácticamente cualquier dispositivo concebible.
+
+---------------------------------------------------------------------
+5) FUNCIÓN PRINCIPAL DE UNA IP
+---------------------------------------------------------------------
+
+Una dirección IP cumple dos funciones fundamentales:
+
+1) Identificación
+   Indica qué dispositivo participa en la comunicación.
+
+2) Localización
+   Indica en qué red se encuentra ese dispositivo.
+
+Una IP no solo identifica un equipo.
+También indica su ubicación dentro de la estructura jerárquica
+de redes globales.
+
+---------------------------------------------------------------------
+6) ESTRUCTURA JERÁRQUICA (RED Y HOST)
+---------------------------------------------------------------------
+
+Una dirección IP está dividida en dos partes:
+
+- Parte de red
+- Parte de host
+
+La parte de red identifica la red a la que pertenece el dispositivo.
+La parte de host identifica el dispositivo dentro de esa red.
+
+Esto permite que los routers tomen decisiones eficientes,
+porque pueden enrutar por red en lugar de por dispositivo individual.
+
+Ejemplo conceptual:
+
+Red: 192.168.1.0
+Host específico: 192.168.1.25
+
+---------------------------------------------------------------------
+7) IP PÚBLICA VS IP PRIVADA
+---------------------------------------------------------------------
+
+Existen dos tipos principales de direcciones IP:
+
+IP Pública:
+Es visible en Internet global.
+Es única en todo el mundo.
+La asigna tu proveedor de Internet.
+
+IP Privada:
+Se usa dentro de redes locales.
+No es visible directamente en Internet.
+Ejemplo común:
+192.168.x.x
+10.x.x.x
+
+Tu casa normalmente funciona así:
+
+Dispositivos internos → IP privada
+Router → IP pública
+
+El router traduce entre ambas mediante un proceso llamado NAT
+(Network Address Translation).
+
+---------------------------------------------------------------------
+8) IP DINÁMICA VS IP ESTÁTICA
+---------------------------------------------------------------------
+
+IP Dinámica:
+Cambia periódicamente.
+La mayoría de usuarios domésticos usan este tipo.
+
+IP Estática:
+No cambia.
+Se usa en servidores o servicios que deben ser accesibles
+de manera constante.
+
+Si quieres montar un servidor en tu casa,
+necesitas IP estática o un sistema de DNS dinámico.
+
+---------------------------------------------------------------------
+9) PAPEL DE LA IP EN EL ENVÍO DE PAQUETES
+---------------------------------------------------------------------
+
+Cada paquete que viaja por Internet contiene:
+
+- IP de origen
+- IP de destino
+
+Los routers leen la IP de destino
+y consultan su tabla de enrutamiento
+para decidir hacia dónde enviar el paquete.
+
+Este proceso se repite en cada salto (hop)
+hasta que el paquete llega al destino final.
+
+La IP es esencial para el enrutamiento global.
+
+---------------------------------------------------------------------
+10) ASIGNACIÓN Y ADMINISTRACIÓN GLOBAL
+---------------------------------------------------------------------
+
+Las direcciones IP no se asignan al azar.
+
+Existen organismos internacionales que administran los bloques:
+
+- IANA (autoridad global)
+- RIRs (registros regionales)
+- ISPs (proveedores)
+
+Estos organismos asignan bloques de direcciones
+a diferentes regiones y proveedores,
+manteniendo el orden y evitando conflictos.
+
+---------------------------------------------------------------------
+11) LIMITACIONES Y SEGURIDAD
+---------------------------------------------------------------------
+
+Una dirección IP no es una identidad personal.
+
+Identifica una conexión,
+no necesariamente a una persona.
+
+Tampoco garantiza seguridad.
+Las IP pueden ser:
+
+- Ocultadas mediante VPN
+- Enmascaradas mediante proxies
+- Compartidas mediante NAT
+
+La IP es un componente técnico de enrutamiento,
+no un sistema de autenticación.
+
+---------------------------------------------------------------------
+12) DEFINICIÓN TÉCNICA FINAL
+---------------------------------------------------------------------
+
+Una dirección IP es un identificador lógico jerárquico,
+asignado a una interfaz de red,
+que permite la identificación y localización de dispositivos
+dentro de una arquitectura global de redes interconectadas,
+haciendo posible el enrutamiento eficiente de paquetes
+mediante el protocolo IP.
+
+---------------------------------------------------------------------

@@ -1,0 +1,207 @@
+¿QUÉ ES HTTPS?
+Explicación técnica detallada y estructurada.
+
+---------------------------------------------------------------------
+1) DEFINICIÓN FORMAL
+---------------------------------------------------------------------
+
+HTTPS significa HyperText Transfer Protocol Secure.
+
+Es simplemente HTTP ejecutándose sobre una capa
+de seguridad criptográfica llamada TLS
+(Transport Layer Security).
+
+No es un protocolo totalmente diferente.
+Es HTTP + cifrado + autenticación + verificación
+de integridad.
+
+Formalmente:
+
+HTTPS = HTTP sobre TLS sobre TCP/IP
+
+En HTTP/3:
+HTTPS = HTTP sobre QUIC (que ya integra cifrado)
+
+---------------------------------------------------------------------
+2) ¿QUÉ PROBLEMA RESUELVE?
+---------------------------------------------------------------------
+
+HTTP tradicional envía datos en texto plano.
+
+Eso significa que cualquier persona que pueda
+interceptar el tráfico en la red puede leer:
+
+- Contraseñas
+- Tokens
+- Formularios
+- Cookies
+- Información personal
+
+HTTPS resuelve esto mediante:
+
+1) Cifrado
+2) Autenticación
+3) Integridad
+
+---------------------------------------------------------------------
+3) CIFRADO
+---------------------------------------------------------------------
+
+Cuando usas HTTPS, los datos viajan cifrados.
+
+Aunque alguien capture los paquetes,
+solo verá datos ilegibles.
+
+Ejemplo conceptual:
+
+HTTP:
+password=123456
+
+HTTPS:
+a9f82js8dj29dj39dkd9dj...
+
+El cifrado se realiza usando criptografía moderna,
+principalmente:
+
+- Criptografía asimétrica (clave pública/privada)
+- Criptografía simétrica
+- Funciones hash
+
+---------------------------------------------------------------------
+4) AUTENTICACIÓN
+---------------------------------------------------------------------
+
+HTTPS también verifica que el servidor
+realmente sea quien dice ser.
+
+Esto se logra mediante:
+
+Certificados digitales.
+
+Un certificado es emitido por una
+Autoridad Certificadora (CA).
+
+Ejemplos de CAs conocidas:
+
+- DigiCert
+- Let's Encrypt
+- GlobalSign
+
+Cuando tu navegador se conecta a un sitio HTTPS:
+
+1) El servidor envía su certificado.
+2) El navegador verifica que la CA sea confiable.
+3) Se valida que el dominio coincida.
+4) Se comprueba que el certificado no esté vencido.
+
+Si algo falla,
+el navegador muestra advertencia.
+
+---------------------------------------------------------------------
+5) INTEGRIDAD DE DATOS
+---------------------------------------------------------------------
+
+HTTPS garantiza que los datos
+no sean modificados durante el tránsito.
+
+Si un atacante intenta alterar
+un paquete en medio del camino,
+la verificación criptográfica fallará.
+
+Esto protege contra:
+
+- Ataques Man-in-the-Middle
+- Inyección de contenido malicioso
+- Modificación de respuestas
+
+---------------------------------------------------------------------
+6) ¿CÓMO FUNCIONA INTERNAMENTE? (RESUMEN DEL HANDSHAKE TLS)
+---------------------------------------------------------------------
+
+Cuando visitas un sitio HTTPS:
+
+1) Cliente dice: "Hola, quiero conectarme."
+2) Servidor responde con su certificado.
+3) Cliente verifica el certificado.
+4) Se negocian algoritmos de cifrado.
+5) Se genera una clave de sesión compartida.
+6) A partir de ahí, todo se cifra.
+
+Este proceso se llama TLS Handshake.
+
+Después del handshake,
+la comunicación usa cifrado simétrico,
+porque es mucho más rápido.
+
+---------------------------------------------------------------------
+7) PUERTO POR DEFECTO
+---------------------------------------------------------------------
+
+HTTP usa puerto 80.
+HTTPS usa puerto 443.
+
+Esto es solo convención,
+pero es el estándar de facto.
+
+---------------------------------------------------------------------
+8) DIFERENCIAS CLAVE ENTRE HTTP Y HTTPS
+---------------------------------------------------------------------
+
+HTTP:
+- No cifrado
+- Vulnerable a espionaje
+- Vulnerable a modificación
+- No autentica servidor
+
+HTTPS:
+- Cifrado
+- Protege privacidad
+- Garantiza integridad
+- Autentica identidad del servidor
+
+---------------------------------------------------------------------
+9) IMPACTO EN LA WEB MODERNA
+---------------------------------------------------------------------
+
+Hoy HTTPS es obligatorio en la práctica.
+
+Navegadores modernos:
+
+- Marcan HTTP como "No seguro"
+- Bloquean funciones sensibles sin HTTPS
+- Requieren HTTPS para Service Workers
+- Requieren HTTPS para muchas APIs modernas
+
+Además:
+Google prioriza HTTPS en ranking SEO.
+
+---------------------------------------------------------------------
+10) ¿ES 100% SEGURO?
+---------------------------------------------------------------------
+
+HTTPS protege la comunicación en tránsito.
+
+Pero NO protege contra:
+
+- Malware en tu dispositivo
+- Servidores comprometidos
+- Contraseñas débiles
+- Ingeniería social
+- Phishing (si el dominio es falso pero tiene certificado válido)
+
+HTTPS protege el canal,
+no la intención del sitio.
+
+---------------------------------------------------------------------
+11) DEFINICIÓN TÉCNICA FINAL
+---------------------------------------------------------------------
+
+HTTPS es un protocolo de comunicación
+que encapsula HTTP dentro de una capa
+criptográfica (TLS),
+proporcionando confidencialidad,
+autenticación e integridad
+en la transferencia de datos
+entre cliente y servidor en Internet.
+
+---------------------------------------------------------------------
